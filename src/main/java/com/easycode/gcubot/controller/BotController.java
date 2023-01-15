@@ -8,10 +8,7 @@ import com.easycode.gcubot.vo.RequestMessageVO;
 import com.easycode.gcubot.vo.ResponseMessageVO;
 
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -28,11 +25,14 @@ public class BotController {
         return keyboard;
     }
 
-    @RequestMapping(value = "/message", method = RequestMethod.POST, headers = "Accept=application/json")
-    public ResponseMessageVO message(@RequestBody JSONObject vo) {
+    @RequestMapping(value = "/message", method = RequestMethod.POST, produces="application/json; charset=UTF-8")
+    @ResponseBody
+    public ResponseMessageVO message(@RequestBody RequestMessageVO vo) throws JsonParseException, JsonMappingException, IOException
+    {
+        ResponseMessageVO res_vo=new ResponseMessageVO();
+        MessageVO mes_vo=new MessageVO();
 
-        ResponseMessageVO res_vo = new ResponseMessageVO();
-        MessageVO mes_vo = new MessageVO();
+
 //        String command = vo.getContent();
         System.out.println(vo);
 //        System.out.println(command);
