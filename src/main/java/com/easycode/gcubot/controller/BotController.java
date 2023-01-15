@@ -32,6 +32,7 @@ public class BotController {
         ResponseMessageVO res_vo = new ResponseMessageVO();
         MessageVO mes_vo = new MessageVO();
         String command = vo.getContent();
+        System.out.println(vo);
         System.out.println(command);
 
 
