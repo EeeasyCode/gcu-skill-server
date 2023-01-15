@@ -27,13 +27,13 @@ public class BotController {
     }
 
     @RequestMapping(value = "/message", method = RequestMethod.POST)
-    public ResponseMessageVO message(@RequestBody RequestMessageVO vo) {
+    public ResponseMessageVO message(@RequestBody RequestMessageVO[] vo) {
 
         ResponseMessageVO res_vo = new ResponseMessageVO();
         MessageVO mes_vo = new MessageVO();
-        String command = vo.getContent();
+//        String command = vo.getContent();
         System.out.println(vo);
-        System.out.println(command);
+//        System.out.println(command);
 
 
 //        if(command.equals("메뉴")) {
