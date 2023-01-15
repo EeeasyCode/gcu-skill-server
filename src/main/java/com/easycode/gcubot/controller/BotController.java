@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class BotController {
 
+
 //========== VO로 구현 ==========
 
     @RequestMapping(value = "/keyboard", method = RequestMethod.GET)
