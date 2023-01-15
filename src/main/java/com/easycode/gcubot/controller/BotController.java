@@ -32,15 +32,16 @@ public class BotController {
         ResponseMessageVO res_vo = new ResponseMessageVO();
         MessageVO mes_vo = new MessageVO();
         String command = vo.getContent();
+        System.out.println(command);
 
 
-        if(command.equals("메뉴")) {
+//        if(command.equals("메뉴")) {
 
             mes_vo.setText("메뉴에서 명령을 선택해주세요~");
             KeyboardVO keyboard = new KeyboardVO(new String[]
                     {"챗봇이랑 대화하기", "공지사항 보기", "FAQ 보기", "1:1 문의하기"});
             res_vo.setKeyboard(keyboard);
-        }
+//        }
 
 //        else if(command.equals("1:1 문의하기")) {
 //
