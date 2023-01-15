@@ -28,7 +28,7 @@ public class BotController {
         return keyboard;
     }
 
-    @RequestMapping(value = "/message", method = RequestMethod.POST, headers = "accept=application/json")
+    @RequestMapping(value = "/message", method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseMessageVO message(@RequestBody JSONObject vo) {
 
         ResponseMessageVO res_vo = new ResponseMessageVO();
