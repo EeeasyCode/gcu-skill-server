@@ -34,7 +34,7 @@ public class BotController {
         MessageVO mes_vo = new MessageVO();
 //        String command = vo.getContent();
         System.out.println(vo);
-        System.out.println(command);
+//        System.out.println(command);
 
 
 //        if(command.equals("메뉴")) {
