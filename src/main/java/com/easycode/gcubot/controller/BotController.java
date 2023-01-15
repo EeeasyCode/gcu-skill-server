@@ -3,13 +3,13 @@ package com.easycode.gcubot.controller;
 import java.util.ArrayList;
 
 import com.easycode.gcubot.vo.KeyboardVO;
+import com.easycode.gcubot.vo.MessageVO;
+import com.easycode.gcubot.vo.RequestMessageVO;
+import com.easycode.gcubot.vo.ResponseMessageVO;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-
-
 
 
 @RestController
@@ -26,21 +26,22 @@ public class BotController {
         return keyboard;
     }
 
-//    @RequestMapping(value = "/message", method = RequestMethod.POST)
-//    public ResponseMessageVO message(@RequestBody RequestMessageVO vo) {
-//
-//        ResponseMessageVO res_vo = new ResponseMessageVO();
-//        MessageVO mes_vo = new MessageVO();
-//        String command = vo.getContent();
-//
-//
-//        if(command.equals("메뉴")) {
-//
-//            mes_vo.setText("메뉴에서 명령을 선택해주세요~");
-//            KeyboardVO keyboard = new KeyboardVO(new String[]
-//                    {"챗봇이랑 대화하기", "공지사항 보기", "FAQ 보기", "1:1 문의하기"});
-//            res_vo.setKeyboard(keyboard);
-//        }
+    @RequestMapping(value = "/message", method = RequestMethod.POST)
+    public ResponseMessageVO message(@RequestBody RequestMessageVO vo) {
+
+        ResponseMessageVO res_vo = new ResponseMessageVO();
+        MessageVO mes_vo = new MessageVO();
+        String command = vo.getContent();
+
+
+        if(command.equals("메뉴")) {
+
+            mes_vo.setText("메뉴에서 명령을 선택해주세요~");
+            KeyboardVO keyboard = new KeyboardVO(new String[]
+                    {"챗봇이랑 대화하기", "공지사항 보기", "FAQ 보기", "1:1 문의하기"});
+            res_vo.setKeyboard(keyboard);
+        }
+
 //        else if(command.equals("1:1 문의하기")) {
 //
 //            MessageButtonVO messageButton = new MessageButtonVO();
@@ -111,7 +112,7 @@ public class BotController {
 //            mes_vo.setText("아직 구현하지 않은 명령어입니다. Ryan에게 문의하세요~");
 //        }
 //
-//        res_vo.setMessage(mes_vo);
-//        return res_vo;
-//    }
+        res_vo.setMessage(mes_vo);
+        return res_vo;
+    }
 }
