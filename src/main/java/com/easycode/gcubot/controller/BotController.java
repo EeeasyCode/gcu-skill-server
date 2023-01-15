@@ -6,7 +6,8 @@ import com.easycode.gcubot.vo.KeyboardVO;
 import com.easycode.gcubot.vo.MessageVO;
 import com.easycode.gcubot.vo.RequestMessageVO;
 import com.easycode.gcubot.vo.ResponseMessageVO;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
+
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
