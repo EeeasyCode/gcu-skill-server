@@ -27,7 +27,7 @@ public class BotController {
 
     @RequestMapping(value = "/message", method = RequestMethod.POST, produces="application/json; charset=UTF-8")
     @ResponseBody
-    public ResponseMessageVO message(@RequestBody JSONObject vo)
+    public ResponseMessageVO message(@RequestBody RequestMessageVO vo)
     {
         ResponseMessageVO res_vo=new ResponseMessageVO();
         MessageVO mes_vo=new MessageVO();
