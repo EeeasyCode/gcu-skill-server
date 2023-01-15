@@ -6,6 +6,7 @@ import com.easycode.gcubot.vo.KeyboardVO;
 import com.easycode.gcubot.vo.MessageVO;
 import com.easycode.gcubot.vo.RequestMessageVO;
 import com.easycode.gcubot.vo.ResponseMessageVO;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,14 +27,14 @@ public class BotController {
         return keyboard;
     }
 
-    @RequestMapping(value = "/message", method = RequestMethod.POST)
-    public ResponseMessageVO message(@RequestBody RequestMessageVO[] vo) {
+    @RequestMapping(value = "/message", method = RequestMethod.POST, headers = "accept=application/json")
+    public ResponseMessageVO message(@RequestBody JSONObject vo) {
 
         ResponseMessageVO res_vo = new ResponseMessageVO();
         MessageVO mes_vo = new MessageVO();
 //        String command = vo.getContent();
         System.out.println(vo);
-//        System.out.println(command);
+        System.out.println(command);
 
 
 //        if(command.equals("메뉴")) {
