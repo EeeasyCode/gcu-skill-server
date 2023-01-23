@@ -34,11 +34,11 @@ public class KKORestAPI {
 
             String rtnStr = "";
             switch (utter){
-                case "뭐야" : rtnStr = "코딩32 챗봇입니다.";
+                case "정보" : rtnStr = "가천대학교 알리미 봇입니다.";
                     break;
-                case "ㅋㅋ" : rtnStr = "저도 기분이 좋네요";
+                case "도움말" : rtnStr = "아직 테스트 중입니다.";
                     break;
-                default: rtnStr = "안녕하세요 코딩 32 챗봇입니다.";
+                default: rtnStr = "안녕하세요 가천대학교 알리미 봇입니다. 무엇을 도와드릴까요?";
             }
             /* 발화 처리 끝*/
 
